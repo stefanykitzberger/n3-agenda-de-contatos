@@ -149,7 +149,7 @@ void searchContactByName(int contactCount, Contact contacts[]){
     int found = 0;
     
     printf("\nBusque o nome do contato: ");
-    scanf("%s", name); // testar busca usando contato com espaço no nome
+    scanf(" %[^\n]", name);
 
     for (int i = 0; i < contactCount; i++) {
         sorted[i] = contacts[i];
@@ -171,7 +171,7 @@ void deleteContact(int *contactCount, Contact contacts[]){
     char name[50];
     
     printf("\nBusque o nome do contato que deseja excluir: ");
-    scanf("%s", name);
+    scanf(" %[^\n]", name);
 
     int index = getContactIndexByName(*contactCount, contacts, name);
     if (index == -1) {
@@ -193,7 +193,7 @@ void editContact(int contactCount, Contact contacts[]){
     char name[50];
     
     printf("\nBusque o nome do contato que deseja editar: ");
-    scanf("%s", name);
+    scanf(" %[^\n]", name);
 
     int index = getContactIndexByName(contactCount, contacts, name);
     if (index == -1) {
